@@ -1,7 +1,9 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+// @ts-ignore - Vite 环境变量
+const supabaseUrl = import.meta.env?.VITE_SUPABASE_URL;
+// @ts-ignore - Vite 环境变量
+const supabaseAnonKey = import.meta.env?.VITE_SUPABASE_ANON_KEY;
 
 // 如果环境变量缺失，返回一个空客户端，避免应用崩溃
 let supabaseClient: ReturnType<typeof createClient> | null = null;
