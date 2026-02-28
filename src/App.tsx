@@ -3,11 +3,13 @@ import FeedbackForm from './components/FeedbackForm';
 import AdminDashboard from './components/AdminDashboard';
 import { Toaster } from './components/ui/toaster';
 import { AlertTriangle } from 'lucide-react';
+import { SUPABASE_CONFIG } from './config';
 
+// 优先使用环境变量，如果没有则使用硬编码的配置
 // @ts-ignore - Vite 环境变量
-const supabaseUrl = import.meta.env?.VITE_SUPABASE_URL;
+const supabaseUrl = import.meta.env?.VITE_SUPABASE_URL || SUPABASE_CONFIG.url;
 // @ts-ignore - Vite 环境变量
-const supabaseAnonKey = import.meta.env?.VITE_SUPABASE_ANON_KEY;
+const supabaseAnonKey = import.meta.env?.VITE_SUPABASE_ANON_KEY || SUPABASE_CONFIG.anonKey;
 const isConfigured = !!(supabaseUrl && supabaseAnonKey);
 
 function App() {
