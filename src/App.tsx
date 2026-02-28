@@ -4,9 +4,8 @@ import AdminDashboard from './components/AdminDashboard';
 import { Toaster } from './components/ui/toaster';
 import { AlertTriangle } from 'lucide-react';
 
-// @ts-ignore
-const supabaseUrl = (import.meta as any).env?.VITE_SUPABASE_URL;
-const supabaseAnonKey = (import.meta as any).env?.VITE_SUPABASE_ANON_KEY;
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 const isConfigured = !!(supabaseUrl && supabaseAnonKey);
 
 function App() {
